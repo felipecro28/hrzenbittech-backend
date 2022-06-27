@@ -1,17 +1,15 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Model, Table, Column, DataType } from 'sequelize-typescript';
 
-@Entity()
-export class UserModel {
-  @PrimaryGeneratedColumn()
-  id: number;
 
-  @Column()
+@Table
+export class UserModel extends Model<UserModel> {
+  @Column({ type: DataType.STRING })
   name: string;
 
-  @Column()
+  @Column({ type: DataType.STRING })
   email: string;
 
-  @Column('text')
+  @Column({ type: DataType.STRING })
   message: string;
 
 }
