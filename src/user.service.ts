@@ -14,7 +14,8 @@ export class UserService {
     return this.userModel.findAll()
   }
 
-  async postUser() (user: UserModel) {
+  async postUser(user: UserModel) {
+    console.log(user)
     this.userModel.create(user)
   }
 
