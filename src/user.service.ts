@@ -14,8 +14,11 @@ export class UserService {
     return this.userModel.findAll()
   }
 
+  async getOne(id: number): Promise<UserModel> {
+    return this.userModel.findByPk(id)
+  }
+
   async postUser(user: UserModel) {
-    console.log(user)
     this.userModel.create(user)
   }
 

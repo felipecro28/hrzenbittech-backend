@@ -13,9 +13,15 @@ export class UserController {
     return this.userController.getAll()
   }
 
+  @Get(':id')
+  getOneUser(@Param() params ): Promise<UserModel[]> {
+    return this.userController.getOne(params.id)
+  }
+
+  
+
   @Post()
   createUser(@Body() user: UserModel) {
-    console.log(user)
     return this.userController.postUser(user)
   }
 }
