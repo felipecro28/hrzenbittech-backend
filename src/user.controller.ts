@@ -12,4 +12,9 @@ export class UserController {
   getUsers(): Promise<UserModel[]>{
     return this.userController.getAll()
   }
+
+  @Post()
+  createUser(user: UserModel) {
+    return this.userController.postUser(user)
+  }
 }
