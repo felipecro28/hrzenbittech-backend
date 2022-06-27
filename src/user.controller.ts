@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { Injectable, Inject } from '@nestjs/common';
 import { UserModel } from './user.model';
 import { UserService } from './user.service';
@@ -9,19 +9,27 @@ export class UserController {
   constructor(private userController: UserService) {}
   
   @Get()
-  getUsers(): Promise<UserModel[]>{
+  async getUsers(): Promise<UserModel[]>{
     return this.userController.getAll()
   }
 
   @Get(':id')
-  getOneUser(@Param() params): Promise<UserModel> {
+  async getOneUser(@Param() params): Promise<UserModel> {
     return this.userController.getOne(params.id)
   }
 
-  
-
   @Post()
-  createUser(@Body() user: UserModel) {
+  async createUser(@Body() user: UserModel) {
     return this.userController.postUser(user)
+  }
+
+  @Delete(':id')
+  async deleteUser(@Param() params) {
+    return this.userController.delete(params.id)
+  }
+
+  @Put()
+  async setUser(@Body() user: UserModel) {
+    return this.userController.setUser(user)
   }
 }
