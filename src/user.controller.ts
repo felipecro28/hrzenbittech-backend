@@ -14,7 +14,7 @@ export class UserController {
   }
 
   @Post()
-  createUser(user: UserModel) {
+  createUser(@Body() user: UserModel) {
     return this.userController.postUser(user)
   }
 }
