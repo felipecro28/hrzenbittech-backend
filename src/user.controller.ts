@@ -1,12 +1,19 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
+import { Repository } from 'typeorm';
 import { UserModel } from './user.model';
 
 @Controller('user')
 export class UserController {
+  constructor(
+    @Inject('USER_REPOSITORY')
+    private userRepository: Repository<UserModel>,
+  )
 
   @Get()
-  getUser(): string {
-    return 'user created'
+  getUser(): Promise<UserModel[]> {
+    return this.userRepository.find();
+  }
   }
 
   @Get(':id')
