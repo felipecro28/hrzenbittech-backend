@@ -28,8 +28,8 @@ export class UserController {
     return this.userController.delete(params.id)
   }
 
-  @Put()
-  async setUser(@Body() user: UserModel) {
-    return this.userController.setUser(user)
+  @Patch(':id')
+  async setUser(@Body() param: string, @Param() id: number){
+    return this.userController.setUser(id, param)
   }
 }

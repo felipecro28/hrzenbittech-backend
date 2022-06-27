@@ -1,5 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
+import { json } from 'sequelize';
 import { UserModel } from './user.model';
 
 @Injectable()
@@ -26,12 +27,10 @@ export class UserService {
     user.destroy();
   }
 
-  async setUser(user: UserModel){
-    return this.userModel.update(user, {
-      where: {
-        id: user.id
-      }
-    });
+  async setUser(id: number, body: typeof json){
+    const user: UserModel = await this.getOne(id)
+    user.update(body)
+  }
   }
 
 }
