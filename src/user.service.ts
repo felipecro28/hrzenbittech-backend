@@ -27,8 +27,13 @@ export class UserService {
     user.destroy();
   }
 
-  async setUser(id: number, body: object){
-    const user: UserModel = await this.getOne(id)
-    user.update(body)
-  }
+
+  async setUser(user: UserModel): Promise<[number]> {
+    return this.userModel.update(user, {
+      where: {
+        id: user.id,
+      },
+    });
+}
+
   }
