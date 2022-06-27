@@ -14,7 +14,7 @@ export class UserController {
   }
 
   @Get(':id')
-  getOneUser(@Param() params): Promise<UserModel[]> {
+  getOneUser(@Param() params): Promise<UserModel> {
     return this.userController.getOne(params.id)
   }
 
