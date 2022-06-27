@@ -29,7 +29,7 @@ export class UserController {
   }
 
   @Patch(':id')
-  async setUser(@Body() param: string, @Param() id: number){
+  async setUser(@Body() param: object, @Param() id: number){
     return this.userController.setUser(id, param)
   }
 }

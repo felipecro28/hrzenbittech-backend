@@ -27,10 +27,8 @@ export class UserService {
     user.destroy();
   }
 
-  async setUser(id: number, body: typeof json){
+  async setUser(id: number, body: object){
     const user: UserModel = await this.getOne(id)
     user.update(body)
   }
   }
-
-}
