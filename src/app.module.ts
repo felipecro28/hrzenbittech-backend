@@ -16,6 +16,7 @@ import { UserService } from './user.service';
       password: '97eab81a',
       database: 'heroku_a103919a812fae9',
       synchronize: true,
+      autoLoadModels: true,
       models: [UserModel],
     }),
     SequelizeModule.forFeature([UserModel])
