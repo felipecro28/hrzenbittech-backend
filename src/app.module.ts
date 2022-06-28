@@ -1,27 +1,26 @@
 import { Module } from '@nestjs/common';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { UserController } from './user.controller';
 import { UserModel } from './user.model';
 import { UserService } from './user.service';
+import 'dotenv/config'
 
 @Module({
   imports: [
     SequelizeModule.forRoot({
       dialect: 'mysql',
-      host: 'us-cdbr-east-05.cleardb.net',
+      host: process.env.DB_HOST,
       port: 3306,
-      username: 'bb5486777b84e4',
-      password: '97eab81a',
-      database: 'heroku_a103919a812fae9',
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE,
       synchronize: true,
       autoLoadModels: true,
       models: [UserModel],
     }),
     SequelizeModule.forFeature([UserModel])
   ],
-  controllers: [AppController, UserController],
-  providers: [AppService, UserService],
+  controllers: [UserController],
+  providers: [UserService],
 })
 export class AppModule {}
