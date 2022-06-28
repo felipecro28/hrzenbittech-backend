@@ -63,15 +63,14 @@ Use the HTTP method POST on <b>`"api url" + /api/user/id`</b> with all required 
 }
 
 ```
-<br>
 
 ### Delete an User:
 Use the HTTP method DELETE on <b>`"api url" + /api/user/id`</b>
 <br>
-<br>
 
 
 
-<h2 id="grupo">Aut
+<h2 id="grupo">Author:
+  <br>
   - [Felipe Oliveira](https://www.linkedin.com/in/carvalho-felipe28/)
  
