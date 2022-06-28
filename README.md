@@ -61,9 +61,8 @@ Use the HTTP method POST on <b>`"api url" + /api/user/id`</b> with all required 
     "email": "test@email.com",
     "message": "test message"
 }
-<br>
 
-
+```
 <br>
 
 ### Delete an User:
