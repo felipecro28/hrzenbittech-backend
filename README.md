@@ -70,8 +70,10 @@ Use the HTTP method DELETE on <b>`"api url" + /api/user/id`</b>
 
 
 <hr>
-<h2 id="grupo">Author:
+<br>
+<h3 id="grupo">Author:
   <br>
-  - [Felipe Oliveira](https://www.linkedin.com/in/carvalho-felipe28/)
-  </hr>
+  <br>
+  -[Felipe Oliveira](https://www.linkedin.com/in/carvalho-felipe28/)
+
  
