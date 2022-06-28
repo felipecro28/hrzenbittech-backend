@@ -74,6 +74,6 @@ Use the HTTP method DELETE on <b>`"api url" + /api/user/id`</b>
 <h3 id="grupo">Author:
   <br>
   <br>
-  -[Felipe Oliveira](https://www.linkedin.com/in/carvalho-felipe28/)
+  [Felipe Oliveira](https://www.linkedin.com/in/carvalho-felipe28/)
 
  
